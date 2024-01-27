@@ -17,6 +17,7 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
 	const { email, password } = validatedFields.data;
 
 	try {
+		// could also await signIn('google') or await signIn('github')
 		await signIn('credentials', {
 			email,
 			password,
